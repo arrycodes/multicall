@@ -3,7 +3,7 @@ import * as React from 'react'
 import { WagmiConfig } from 'wagmi'
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 
-import { arbitrum, mainnet, bsc, polygon, fantom, avalanche, sepolia} from 'viem/chains'
+import { arbitrum, mainnet, bsc, polygon, fantom, avalanche, sepolia, bscTestnet} from 'viem/chains'
 
 
 export const projectId = '56de852a69580b46d61b53f7b3922ce1'
@@ -17,7 +17,7 @@ const metadata = {
 }
 
 
-export const chains = [mainnet, arbitrum, bsc, polygon, fantom, avalanche, sepolia]
+export const chains = [mainnet, arbitrum, bsc, polygon, fantom, avalanche, sepolia, bscTestnet]
 export const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 createWeb3Modal({ wagmiConfig, projectId, chains })

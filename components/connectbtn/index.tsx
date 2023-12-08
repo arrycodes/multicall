@@ -1,14 +1,17 @@
 "use client"
-import {useAccount, useDisconnect} from 'wagmi'
+import {useAccount, useDisconnect, useBalance} from 'wagmi'
 import {useState, useEffect} from "react"
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 
 export const SendButton = () => {
   
+ 
   const [message, setMessage] = useState("Connect Wallet")
   const {address, isConnected} = useAccount()
 const {open} = useWeb3Modal()
+
+
   
 const handleClick = (e: Event) => {
 e.preventDefault()

@@ -16,19 +16,26 @@ export default function Home() {
     const [receipt, setReceipt] = useState<TransactionReceipt>()
     const [account, setAccount] = useState<Address>()
     const {address, isConnected} = useAccount()
+    const ercadd = "0x7ef95a0FEE0Dd31b22626fA2e10Ee6A223F8a684"
     const PC = usePublicClient()
     const {data} = useWalletClient({
         async onSuccess(data) {
 
+          try {
             const [address] = await  data?.getAddresses()
-                setAccount(address)
-          const hash = await data?.deployContract({
-                abi: abibyte.abi,
-                account,
-                bytecode: abibyte.bytecode,
-              })
+            setAccount(address)
+         const hash = await data?.deployContract({
+               abi: abibyte.abi,
+               account,
+               args: [ercadd],
+               bytecode: abibyte.bytecode,
+             })
 console.log(hash)
-        setHash(hash)
+       setHash(hash)
+          } catch (error) {
+            console.log(error)
+          }
+           
         }
     })
 

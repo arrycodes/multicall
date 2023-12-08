@@ -3,10 +3,6 @@ import SwitchBtn from "../connectbtn/select"
 
 const Hero = ()  => {
 
-  const handleClick = (e: Event) => {
-e.preventDefault()
-
-  }
     return(
         <section id="hero" className="d-flex align-items-center">
     <div className="container" data-aos="zoom-out" data-aos-delay="100">

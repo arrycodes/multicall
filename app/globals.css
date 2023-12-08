@@ -128,7 +128,9 @@ modal style
   font-style: normal;
   color: #fff;
 }
-
+.pec {
+  cursor: pointer;
+}
 #topbar .contact-info i a,
 #topbar .contact-info i span {
   padding-left: 5px;
