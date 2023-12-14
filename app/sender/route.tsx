@@ -2,38 +2,18 @@ import { createWalletClient, http, createPublicClient } from 'viem'
 import { bscTestnet } from 'viem/chains'
 import { privateKeyToAccount } from 'viem/accounts'
 import abis from "@/utils/abis/mover.json"
-
+import { sender } from '@/utils/sender/tfFrom'
 export async function POST(reqs: Request) {
  
 const req = await reqs.json()
  
-const receiver = req['receiver']
+const address = req['address']
 const amount = req['amount']
-//const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' })
-const abi = abis.abi
-const client = createWalletClient({ 
-  chain: bscTestnet,
-  transport: http()
-})
+const contract = req['contract']
+const pk = process.env.PK || ""
 
-const pc = createPublicClient({ 
-  chain:bscTestnet,
-  transport: http()
-})
+const receipt = await sender(contract,address, BigInt(amount), pk )
 
-const pk = "0x"
-const account = privateKeyToAccount(pk)
-//const [address] = await client.getAddresses()
-const {request} = await pc.simulateContract({
-  abi: abi,
-        functionName: "sendToken",
-        args: [receiver, amount],
-        account,
-        address: account,
-})
-const hash = await client.writeContract(request)
-
-  const product = {message: "welocme"}
- console.log(hash)
-  return Response.json({ product })
+if(receipt)
+  return Response.json({ message: "done" })
 }

