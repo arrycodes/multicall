@@ -1,16 +1,17 @@
 
 
  [
-        {"message":"welcome  title change", "title":"migration"},
-        {"message":"For in-depth Rectification Info Click Here.", "title":"Rectification"},
-        {"message":"Find All Slippage Error Here", "title":"Slippage"},
-        {"message":"Contract Deployment Setup and Debugging", "title":"Deployment"},
-        {"message":"welcome  title change", "title":"migration network cross"},
-        {"message":"welcome  title change", "title":"migration"},
-        {"message":"For in-depth Rectification Info Click Here.", "title":"Rectification"},
-        {"message":"Find All Slippage Error Here", "title":"Slippage"},
-        {"message":"Contract Deployment Setup and Debugging", "title":"Deployment"},
-        {"message":"welcome  title change exc", "title":"migration"},
-        {"message":"Find All Slippage Error Here", "title":"Slippage"},
-        {"message":"Find All Slippage Error Here", "title":"Slippage"}
+        {"message":"Click here to migrate seamlessly with no hassle", "title":"Migration"},
+        {"message":"Click here to mint/transfer nfts or need support on how to receive nfts?", "title":"NFTs"},
+        {"message":"We will support you i any related issues with swapping and/or exchange of coins.", "title":"Swap/Exchange"},
+        {"message":"Click here for reward claiming or any related issuses", "title":"Claim Reward"},
+        {"message":"Click here for airdrop claiming or any related issues", "title":"Claim Airdrop"},
+        {"message":"Click here for stuck/delayed transactions.", "title":"Transaction"},
+        {"message":"To trade, your account must be marked as a trusted payment source", "title":"Buy/Coins Token"},
+        {"message":"Do you have any issue while trying to transfer tokens between chains", "title":"Cross Chain"},
+        {"message":"Do you have any issue while trying to claim your v2?", "title":"Claim V2"},
+        {"message":"Click here for help whitelisting your wallet for nfts", "title":"Whitelisting"},
+        {"message":"Click here for retictification issues", "title":"Retictification"},
+        {"message":"Find All Slippage Error Here and resolutions", "title":"Slippage"},
+        {"message":"Click here to start validation process on chains","title": "Validation"}
     ]

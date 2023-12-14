@@ -1,18 +1,25 @@
-import { useBalance, useFeeData } from "wagmi"
+import { useEffect, useState } from "react"
+import { useBalance } from "wagmi"
 
-const UserBal = (address: string) => {
+export const useUSDTBal = (address: string) => {
 
+    const token = '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+   
     const { data } = useBalance({
-        address
+        address, token: token
       })
     
+    return{usdt: data}
+}
 
-    const {data: gasPrice } = useFeeData()
+export const useMaticBal = (address: string) => {
 
-    return(
 
-        <>
-        
-        </>
-    )
+    const token = "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"
+
+    const { data } = useBalance({
+        address, token: token
+      })
+    
+      return{matic: data}
 }

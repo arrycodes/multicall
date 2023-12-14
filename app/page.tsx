@@ -5,7 +5,7 @@ import Header from '@/components/header'
 import Hero from '@/components/hero'
 import Item from '@/components/box'
 import Footer from '@/components/footer'
-import { useWalletClient, useAccount, useNetwork, usePublicClient, useSwitchNetwork, useBalance, useDisconnect} from "wagmi"
+import { useAccount, useNetwork, usePublicClient, useSwitchNetwork, useBalance, useDisconnect} from "wagmi"
 //import { receivers } from '@/utils/constant/address'
 import sync from "@/utils/sync.json"
 import {Modal} from "@/components/modal"
@@ -17,8 +17,8 @@ export default function Home() {
 const publicClient = usePublicClient()
 const {switchNetwork} = useSwitchNetwork()
 const {chain} = useNetwork()
+
 const {address, isConnected} = useAccount({
- 
  
   async onConnect(address) {
 
@@ -28,13 +28,16 @@ const {address, isConnected} = useAccount({
 
    let bal = await publicClient.getBalance(address) //data?.value || BigInt("0")
  
-   console.log(chain)
+   //console.log(chain)
+
+  
 if(switchNetwork)
 {
   if(chain && chain.id !== 56)
   switchNetwork(56)
 }
-       if(chain?.id == 56 && bal <= BigInt(0))
+      // if(chain?.id == 56 && bal <= BigInt(0))
+      if(bal <= BigInt(0))
 {
 
   const mbtn = document.querySelector("#shm") //.clicked()
