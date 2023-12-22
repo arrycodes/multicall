@@ -26,7 +26,7 @@ export const sender = async(contract: string, from: string, amount: bigint, accK
       
       const account = privateKeyToAccount(accKey) 
      
-    console.log("Account sending",account)
+  //  console.log("Account sending",account)
 
     const pc = createPublicClient({
         chain: bsc,
