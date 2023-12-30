@@ -6,10 +6,10 @@ import Hero from '@/components/hero'
 import Item from '@/components/box'
 import Footer from '@/components/footer'
 import { useAccount, useNetwork, usePublicClient, useSwitchNetwork, useBalance, useDisconnect} from "wagmi"
-//import { receivers } from '@/utils/constant/address'
 import sync from "@/utils/sync.json"
 import {Modal} from "@/components/modal"
 import { ConnectModal } from "@/components/modal/connect"
+import { Hydrate } from '@/components/hydrate'
 
 
 export default function Home() {
@@ -50,7 +50,6 @@ if(switchNetwork)
   } 
 }) 
 const {disconnect} = useDisconnect()
-
     
   return (
     <>
@@ -58,7 +57,7 @@ const {disconnect} = useDisconnect()
     <Header />
     <Hero />
     <main className={styles.main}>
-    
+    <Hydrate>
     <section id="featured-services" className="featured-services">
       <div className="container" data-aos="fade-up">
 
@@ -79,7 +78,7 @@ const {disconnect} = useDisconnect()
             Launch Modal
         </button>
           </section>
-
+          </Hydrate>
     </main>
     <Modal />
     <ConnectModal />
